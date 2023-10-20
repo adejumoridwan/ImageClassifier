@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Classification</title>
+  </head>
+  <body>
+    <body>
+      <h1>Image Upload</h1>
+      <form action="/image" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload Image" />
+      </form>
+      {% if message %}
+      <p>{{ message }}</p>
+      {% endif %} {% if image_label %}
+      <p>Image Label: {{ image_label }}</p>
+      {% endif %} {% if image_path%}
+      <img id="uploaded-image" src="{{ image_path }}" alt="Uploaded Image" />
+      {% endif %}
+    </body>
+  </body>
+</html>
