@@ -11,7 +11,6 @@ def find_max_score_label(data):
     if not data:
         return None
 
-    # Convert 'score' to a floating-point number and then find the maximum
     max_dict = max(data, key=lambda x: float(x['score']))
     return max_dict["label"]
 
