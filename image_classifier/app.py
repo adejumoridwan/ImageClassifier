@@ -48,12 +48,8 @@ def upload_image(request: Request, file: UploadFile = File(...)):
         session.add(image)
         session.commit()
 
-    return templates.TemplateResponse("home.html", {"request": request,
-                                                    "message": "File uploaded successfully",
-                                                    "image_label": image_label,
-                                                    "image_path": f"/static/{file.filename}"}, status_code=200)
+    return templates.TemplateResponse("home.html", {"request": request, "message": "File uploaded successfully", "image_label": image_label, "image_path": f"/static/{file.filename}"}, status_code=200)
 
 
 if __name__ == "__main__":
-    uvicorn.run("image_classifier.app:app",
-                host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("image_classifier.app:app", reload=True)

@@ -29,3 +29,4 @@ def query(filename):
 def classify_image(image_url):
     output = query(image_url)
     return find_max_score_label(output)
+
